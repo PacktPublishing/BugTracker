@@ -1,0 +1,4 @@
+ext/
+.sencha/
+server/node_modules
+build/
