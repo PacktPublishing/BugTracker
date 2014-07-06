@@ -1,0 +1,68 @@
+Ext.define('BugTracker.model.Bug', {
+	extend: 'Ext.data.Model',
+	requires: ['BugTracker.proxy.BugTracker', 
+		'BugTracker.model.lookups.Category', 
+		'BugTracker.model.lookups.Version', 
+		'BugTracker.model.User'],
+	proxy: {
+		type: 'bugtracker',
+		url: '/bugs'
+	},
+	fields: [
+	{
+		name: 'id',
+		type: 'int'
+	},
+	{
+		name: 'category_id',
+		type: 'int'
+	},
+	{
+		name: 'description',
+		type: 'string'
+	},
+	{
+		name: 'summary',
+		type: 'string'
+	},
+	{
+		name: 'date_assigned',
+		type: 'date',
+		dateFormat: 'c'
+	},
+	{
+		name: 'date_completed',
+		type: 'date',
+		dateFormat: 'c'
+	},
+	{
+		name: 'createdAt',
+		type: 'date',
+		dateFormat: 'c'
+	},
+	{
+		name: 'updatedAt',
+		type: 'date',
+		dateFormat: 'c'
+	}
+	],
+	belongsTo: [{
+		name: 'category',
+		model: 'BugTracker.model.lookups.Category',
+		getterName: 'getCategory',
+		foreignKey: 'category_id',
+		associationKey: 'category'
+	}, {
+		name: 'version',
+		model: 'BugTracker.model.Version',
+		getterName: 'getVersion'
+	}, {
+		name: 'assigned_to',
+		model: 'BugTracker.model.User',
+		getterName: 'getAssignedTo'
+	}, {
+		name: 'reported_by',
+		model: 'BugTracker.model.User',
+		getterName: 'getReportedBy'
+	}]
+});

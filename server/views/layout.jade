@@ -1,0 +1,11 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='bootstrap.css')
+    meta(name="csrf-token", content=csrfToken)
+    script(src='ext/ext-dev.js')
+    script(src='bootstrap.js')
+    script(src='app.js')
+  body
+    block content
