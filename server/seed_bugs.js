@@ -57,6 +57,8 @@ function randomBug(callback, chainer, allItems) {
 	var assigned = randomDate(created, today);
 	var completed = randomDateOrNull(assigned, today);
 
+	var assigned_to_id = randomIdFromOrNull(allItems.User);
+
 	var bug = {
 		summary: randomText(10),
 		description: randomText(Math.random() * 200), 
@@ -65,10 +67,11 @@ function randomBug(callback, chainer, allItems) {
 		version_id: randomIdFrom(allItems.Version),
 		importance_id: randomIdFrom(allItems.Importance),
 		reported_by_id: randomIdFrom(allItems.User),
-		assigned_to_id: randomIdFromOrNull(allItems.User),
+		assigned_to_id: assigned_to_id,
 		date_assigned: assigned,
 		date_completed: completed,
-		updatedAt: today
+		updatedAt: today,
+		estimate: (assigned_to_id ? Math.floor(Math.random() * 10) : null) 
 	};
 	var dao = models.Bug.build(bug);
 	dao.dataValues.createdAt = created;

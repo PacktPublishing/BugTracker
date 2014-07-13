@@ -1,9 +1,33 @@
 var db2json = require('../db2json').db2json
-	,models = require('../models.js');
+	,models = require('../models.js')
+	,_ = require('lodash');
+
+
+var page = function(model, req, res, options) {
+	var processExtSort = function(sort) {
+		return sort.map(function(i) {
+			if (i.property == 'reportedBy') return ['reportedBy.name_last', i.direction];
+			if (i.property == 'assignedTo') return ['assignedTo.name_last', i.direction];
+			return [i.property.replace(/_/, '.'), i.direction];
+		});
+	}
+	var _options = _.extend(options || {}, {
+		offset: req.query.start,
+		limit: req.query.limit,
+		order: processExtSort(JSON.parse(req.query.sort))
+	});
+	model.findAndCountAll(_options).on('success', db2json(res));
+}
+
 exports.index = {
 	json: function(req, res) {
-		console.log(req)
-		models.Bug.findAll().on('success', db2json(res));
+		page(models.Bug, req, res, { include: [ 
+			models.Category, 
+			models.Version,
+			models.Importance,
+			{ model: models.User, as: 'assignedTo' },
+			{ model: models.User, as: 'reportedBy' } 
+		] });
 	},
 	calendar: function(req, res) {
 		res.type('json');
@@ -35,6 +59,7 @@ exports.show = function(req, res) {
 		include: [ 
 			models.Category, 
 			models.Version,
+			models.Importance,
 			{ model: models.User, as: 'assignedTo' },
 			{ model: models.User, as: 'reportedBy' } 
 		] 
@@ -45,6 +70,7 @@ exports.show = function(req, res) {
 		bug.category = result.category.mapAttributes();
 		bug.assigned_to = result.assignedTo.mapAttributes();
 		bug.reported_by = result.reportedBy.mapAttributes();
+		bug.importance = result.importance.mapAttributes();
 
 		res.json({
     		success: true,

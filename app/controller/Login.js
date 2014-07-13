@@ -1,5 +1,6 @@
 Ext.define('BugTracker.controller.Login', {
     extend: 'Ext.app.Controller',
+    requires: ['Ext.form.field.ComboBox'],
     views: [ 'Login' ],
     init: function() {
     	this.control({
@@ -9,9 +10,9 @@ Ext.define('BugTracker.controller.Login', {
     		'login form button#cancel': {
     			click: this.onButtonClickCancel
     		}
+            
     	})
     },
-
     onButtonClickCancel: function(button, e, options) {
     	button.up('form').getForm().reset();
     },

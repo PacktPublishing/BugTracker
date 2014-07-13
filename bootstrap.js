@@ -7,21 +7,60 @@
 Ext.Loader.addClassPathMappings({
   "BugTracker": "app",
   "BugTracker.proxy.BugTracker": "app/proxy/BugTracker.js",
-  "BugTracker.view.Login": "app/view/login.js",
   "Ext": "ext/src",
   "Ext.Msg": "ext/src/window/MessageBox.js",
-  "Ext.rtl.EventObjectImpl": "ext/src/rtl/EventObject.js"
+  "Ext.calendar.App": "app/lib/calendar/src/App.js",
+  "Ext.calendar.CalendarPanel": "app/lib/calendar/src/CalendarPanel.js",
+  "Ext.calendar.data.CalendarMappings": "app/lib/calendar/src/data/CalendarMappings.js",
+  "Ext.calendar.data.CalendarModel": "app/lib/calendar/src/data/CalendarModel.js",
+  "Ext.calendar.data.Calendars": "app/lib/calendar/src/data/Calendars.js",
+  "Ext.calendar.data.EventMappings": "app/lib/calendar/src/data/EventMappings.js",
+  "Ext.calendar.data.EventModel": "app/lib/calendar/src/data/EventModel.js",
+  "Ext.calendar.data.Events": "app/lib/calendar/src/data/Events.js",
+  "Ext.calendar.data.MemoryCalendarStore": "app/lib/calendar/src/data/MemoryCalendarStore.js",
+  "Ext.calendar.data.MemoryEventStore": "app/lib/calendar/src/data/MemoryEventStore.js",
+  "Ext.calendar.dd.DayDragZone": "app/lib/calendar/src/dd/DayDragZone.js",
+  "Ext.calendar.dd.DayDropZone": "app/lib/calendar/src/dd/DayDropZone.js",
+  "Ext.calendar.dd.DragZone": "app/lib/calendar/src/dd/DragZone.js",
+  "Ext.calendar.dd.DropZone": "app/lib/calendar/src/dd/DropZone.js",
+  "Ext.calendar.dd.StatusProxy": "app/lib/calendar/src/dd/StatusProxy.js",
+  "Ext.calendar.form.EventDetails": "app/lib/calendar/src/form/EventDetails.js",
+  "Ext.calendar.form.EventWindow": "app/lib/calendar/src/form/EventWindow.js",
+  "Ext.calendar.form.field.CalendarCombo": "app/lib/calendar/src/form/field/CalendarCombo.js",
+  "Ext.calendar.form.field.DateRange": "app/lib/calendar/src/form/field/DateRange.js",
+  "Ext.calendar.form.field.ReminderCombo": "app/lib/calendar/src/form/field/ReminderCombo.js",
+  "Ext.calendar.template.BoxLayout": "app/lib/calendar/src/template/BoxLayout.js",
+  "Ext.calendar.template.DayBody": "app/lib/calendar/src/template/DayBody.js",
+  "Ext.calendar.template.DayHeader": "app/lib/calendar/src/template/DayHeader.js",
+  "Ext.calendar.template.Month": "app/lib/calendar/src/template/Month.js",
+  "Ext.calendar.util.Date": "app/lib/calendar/src/util/Date.js",
+  "Ext.calendar.util.WeekEventRenderer": "app/lib/calendar/src/util/WeekEventRenderer.js",
+  "Ext.calendar.view.AbstractCalendar": "app/lib/calendar/src/view/AbstractCalendar.js",
+  "Ext.calendar.view.Day": "app/lib/calendar/src/view/Day.js",
+  "Ext.calendar.view.DayBody": "app/lib/calendar/src/view/DayBody.js",
+  "Ext.calendar.view.DayHeader": "app/lib/calendar/src/view/DayHeader.js",
+  "Ext.calendar.view.Month": "app/lib/calendar/src/view/Month.js",
+  "Ext.calendar.view.MonthDayDetail": "app/lib/calendar/src/view/MonthDayDetail.js",
+  "Ext.calendar.view.Week": "app/lib/calendar/src/view/Week.js",
+  "Ext.rtl.EventObjectImpl": "ext/src/rtl/EventObject.js",
+  "ExtThemeNeptune": "ext/packages/ext-theme-neptune/overrides"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.Application": [],
   "BugTracker.ChartApplication": [],
+  "BugTracker.TestApplication": [],
+  "BugTracker.controller.Bug": [],
+  "BugTracker.controller.Category": [],
+  "BugTracker.controller.Charts": [],
   "BugTracker.controller.Login": [],
   "BugTracker.controller.Lookup": [],
   "BugTracker.controller.Main": [],
   "BugTracker.controller.Menu": [],
+  "BugTracker.controller.Translation": [],
   "BugTracker.controller.Users": [],
   "BugTracker.model.AbstractLookup": [],
   "BugTracker.model.Bug": [],
+  "BugTracker.model.BugGrid": [],
   "BugTracker.model.Category": [],
   "BugTracker.model.Group": [],
   "BugTracker.model.Importance": [],
@@ -29,24 +68,37 @@ Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.model.Resource": [],
   "BugTracker.model.Role": [],
   "BugTracker.model.User": [],
-  "BugTracker.model.charts.BugsChart": [],
   "BugTracker.model.lookups.Category": [],
   "BugTracker.model.lookups.Importance": [],
   "BugTracker.model.lookups.Version": [],
   "BugTracker.proxy.BugTracker": [],
+  "BugTracker.store.BugGrid": [],
+  "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],
+  "BugTracker.store.Event": [],
   "BugTracker.store.MenuTree": [],
   "BugTracker.store.Users": [],
+  "BugTracker.utils.Format": [],
   "BugTracker.view.AbstractGrid": [],
+  "BugTracker.view.BugDetail": [],
+  "BugTracker.view.BugGrid": [],
+  "BugTracker.view.BugMaster": [],
+  "BugTracker.view.BugMasterDetail": [],
+  "BugTracker.view.Calendar": [],
   "BugTracker.view.CategoriesGrid": [],
   "BugTracker.view.ChartViewport": [],
   "BugTracker.view.Login": [],
   "BugTracker.view.Main": [],
   "BugTracker.view.Menu": [],
+  "BugTracker.view.ReportGrid": [],
+  "BugTracker.view.TestViewport": [],
   "BugTracker.view.UserForm": [],
   "BugTracker.view.UserGrid": [],
   "BugTracker.view.Viewport": [],
   "BugTracker.view.charts.BugCategoryBar": [],
+  "BugTracker.view.charts.BugCategoryPie": [],
+  "BugTracker.view.charts.BugGauge": [],
+  "BugTracker.view.charts.BugLine": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -99,6 +151,37 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.button.Split": [
     "Ext.SplitButton"
   ],
+  "Ext.calendar.App": [],
+  "Ext.calendar.CalendarPanel": [],
+  "Ext.calendar.data.CalendarModel": [],
+  "Ext.calendar.data.Calendars": [],
+  "Ext.calendar.data.EventModel": [],
+  "Ext.calendar.data.Events": [],
+  "Ext.calendar.data.MemoryCalendarStore": [],
+  "Ext.calendar.data.MemoryEventStore": [],
+  "Ext.calendar.dd.DayDragZone": [],
+  "Ext.calendar.dd.DayDropZone": [],
+  "Ext.calendar.dd.DragZone": [],
+  "Ext.calendar.dd.DropZone": [],
+  "Ext.calendar.dd.StatusProxy": [],
+  "Ext.calendar.form.EventDetails": [],
+  "Ext.calendar.form.EventWindow": [],
+  "Ext.calendar.form.field.CalendarCombo": [],
+  "Ext.calendar.form.field.DateRange": [],
+  "Ext.calendar.form.field.ReminderCombo": [],
+  "Ext.calendar.template.BoxLayout": [],
+  "Ext.calendar.template.DayBody": [],
+  "Ext.calendar.template.DayHeader": [],
+  "Ext.calendar.template.Month": [],
+  "Ext.calendar.util.Date": [],
+  "Ext.calendar.util.WeekEventRenderer": [],
+  "Ext.calendar.view.AbstractCalendar": [],
+  "Ext.calendar.view.Day": [],
+  "Ext.calendar.view.DayBody": [],
+  "Ext.calendar.view.DayHeader": [],
+  "Ext.calendar.view.Month": [],
+  "Ext.calendar.view.MonthDayDetail": [],
+  "Ext.calendar.view.Week": [],
   "Ext.chart.Callout": [],
   "Ext.chart.Chart": [],
   "Ext.chart.Highlight": [],
@@ -862,18 +945,40 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.window.MessageBox": [],
   "Ext.window.Window": [
     "Ext.Window"
-  ]
+  ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "BugTracker.Application": [],
   "BugTracker.ChartApplication": [],
+  "BugTracker.TestApplication": [],
+  "BugTracker.controller.Bug": [],
+  "BugTracker.controller.Category": [],
+  "BugTracker.controller.Charts": [],
   "BugTracker.controller.Login": [],
   "BugTracker.controller.Lookup": [],
   "BugTracker.controller.Main": [],
   "BugTracker.controller.Menu": [],
+  "BugTracker.controller.Translation": [],
   "BugTracker.controller.Users": [],
   "BugTracker.model.AbstractLookup": [],
   "BugTracker.model.Bug": [],
+  "BugTracker.model.BugGrid": [],
   "BugTracker.model.Category": [],
   "BugTracker.model.Group": [],
   "BugTracker.model.Importance": [],
@@ -881,19 +986,35 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.model.Resource": [],
   "BugTracker.model.Role": [],
   "BugTracker.model.User": [],
-  "BugTracker.model.charts.BugsChart": [],
   "BugTracker.model.lookups.Category": [],
   "BugTracker.model.lookups.Importance": [],
   "BugTracker.model.lookups.Version": [],
   "BugTracker.proxy.BugTracker": [
     "proxy.bugtracker"
   ],
+  "BugTracker.store.BugGrid": [],
+  "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],
+  "BugTracker.store.Event": [],
   "BugTracker.store.MenuTree": [],
   "BugTracker.store.Users": [],
+  "BugTracker.utils.Format": [],
   "BugTracker.view.AbstractGrid": [
     "widget.abstractgrid"
   ],
+  "BugTracker.view.BugDetail": [
+    "widget.bugdetail"
+  ],
+  "BugTracker.view.BugGrid": [
+    "widget.buggrid"
+  ],
+  "BugTracker.view.BugMaster": [
+    "widget.bugmaster"
+  ],
+  "BugTracker.view.BugMasterDetail": [
+    "widget.bugmasterdetail"
+  ],
+  "BugTracker.view.Calendar": [],
   "BugTracker.view.CategoriesGrid": [
     "widget.categorygrid"
   ],
@@ -907,6 +1028,10 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.view.Menu": [
     "widget.treemenu"
   ],
+  "BugTracker.view.ReportGrid": [
+    "widget.bugreport"
+  ],
+  "BugTracker.view.TestViewport": [],
   "BugTracker.view.UserForm": [
     "widget.userform"
   ],
@@ -916,6 +1041,15 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.view.Viewport": [],
   "BugTracker.view.charts.BugCategoryBar": [
     "widget.chart-bugcategorybar"
+  ],
+  "BugTracker.view.charts.BugCategoryPie": [
+    "widget.chart-bugcategorypie"
+  ],
+  "BugTracker.view.charts.BugGauge": [
+    "widget.chart-buggauge"
+  ],
+  "BugTracker.view.charts.BugLine": [
+    "widget.chart-bugline"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -968,6 +1102,63 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.button.Manager": [],
   "Ext.button.Split": [
     "widget.splitbutton"
+  ],
+  "Ext.calendar.App": [],
+  "Ext.calendar.CalendarPanel": [
+    "widget.calendarpanel"
+  ],
+  "Ext.calendar.data.CalendarModel": [],
+  "Ext.calendar.data.Calendars": [],
+  "Ext.calendar.data.EventModel": [],
+  "Ext.calendar.data.Events": [],
+  "Ext.calendar.data.MemoryCalendarStore": [],
+  "Ext.calendar.data.MemoryEventStore": [],
+  "Ext.calendar.dd.DayDragZone": [],
+  "Ext.calendar.dd.DayDropZone": [],
+  "Ext.calendar.dd.DragZone": [],
+  "Ext.calendar.dd.DropZone": [],
+  "Ext.calendar.dd.StatusProxy": [],
+  "Ext.calendar.form.EventDetails": [
+    "widget.eventeditform"
+  ],
+  "Ext.calendar.form.EventWindow": [
+    "widget.eventeditwindow"
+  ],
+  "Ext.calendar.form.field.CalendarCombo": [
+    "widget.calendarpicker"
+  ],
+  "Ext.calendar.form.field.DateRange": [
+    "widget.daterangefield"
+  ],
+  "Ext.calendar.form.field.ReminderCombo": [
+    "widget.reminderfield"
+  ],
+  "Ext.calendar.template.BoxLayout": [],
+  "Ext.calendar.template.DayBody": [],
+  "Ext.calendar.template.DayHeader": [],
+  "Ext.calendar.template.Month": [],
+  "Ext.calendar.util.Date": [],
+  "Ext.calendar.util.WeekEventRenderer": [],
+  "Ext.calendar.view.AbstractCalendar": [
+    "widget.calendarview"
+  ],
+  "Ext.calendar.view.Day": [
+    "widget.dayview"
+  ],
+  "Ext.calendar.view.DayBody": [
+    "widget.daybodyview"
+  ],
+  "Ext.calendar.view.DayHeader": [
+    "widget.dayheaderview"
+  ],
+  "Ext.calendar.view.Month": [
+    "widget.monthview"
+  ],
+  "Ext.calendar.view.MonthDayDetail": [
+    "widget.monthdaydetailview"
+  ],
+  "Ext.calendar.view.Week": [
+    "widget.weekview"
   ],
   "Ext.chart.Callout": [],
   "Ext.chart.Chart": [
@@ -1900,11 +2091,44 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.window.Window": [
     "widget.window"
-  ]
+  ],
+  "ExtThemeNeptune.Component": [],
+  "ExtThemeNeptune.container.ButtonGroup": [],
+  "ExtThemeNeptune.form.field.HtmlEditor": [],
+  "ExtThemeNeptune.grid.RowEditor": [],
+  "ExtThemeNeptune.grid.column.RowNumberer": [],
+  "ExtThemeNeptune.layout.component.Dock": [],
+  "ExtThemeNeptune.menu.Menu": [],
+  "ExtThemeNeptune.menu.Separator": [],
+  "ExtThemeNeptune.panel.Panel": [],
+  "ExtThemeNeptune.panel.Table": [],
+  "ExtThemeNeptune.panel.Tool": [],
+  "ExtThemeNeptune.picker.Month": [],
+  "ExtThemeNeptune.resizer.Splitter": [],
+  "ExtThemeNeptune.tab.Tab": [],
+  "ExtThemeNeptune.toolbar.Paging": [],
+  "ExtThemeNeptune.toolbar.Toolbar": []
 });
+Ext.setVersion("bugtracker-theme", "1.0.0");
 Ext.setVersion("ext-theme-base", "4.2.1");
-Ext.setVersion("ext-theme-classic", "4.2.1");
+Ext.setVersion("ext-theme-neptune", "4.2.1");
 Ext.setVersion("ext-theme-neutral", "4.2.1");
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/Component.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Panel.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Toolbar.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/layout/component/Dock.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/container/ButtonGroup.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Paging.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/picker/Month.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/form/field/HtmlEditor.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Table.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/RowEditor.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/column/RowNumberer.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/resizer/Splitter.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Menu.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Separator.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Tool.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/tab/Tab.js");;
 /**
  * Sencha Blink - Development
  * @author Jacky Nguyen <jacky@sencha.com>

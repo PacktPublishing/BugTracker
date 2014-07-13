@@ -10,11 +10,7 @@ Ext.define('BugTracker.controller.Menu', {
 			}
 		});
 		this.menuActions = {
-			bugsList: function () {
-				// show the bug master details grid
-				var tab = this.getTabs().add(Ext.widget('bugmasterdetail', { title: 'Bugs' }));
-				tab.show();
-			},
+			bugsList: this.showBugList,
 			bugsReport: this.showBugReport,
 			calendar: this.showCalendar
 		};
@@ -38,6 +34,13 @@ Ext.define('BugTracker.controller.Menu', {
 		var tabs = this.getTabs();
 		var tab = tabs.add(tabContent);
 		tabs.setActiveTab(tab);
+		return tab;
+	},
+
+	showBugList: function () {
+		// show the bug master details grid
+		var tab = this.addTab(Ext.widget('buggrid', { title: 'Bugs' }));
+		tab.getStore().load();
 	},
 
 	showBugReport: function () {

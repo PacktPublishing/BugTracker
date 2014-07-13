@@ -2,7 +2,7 @@ Ext.define('BugTracker.view.Login', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.login',
 	autoShow: true,
-	height: 170,
+	height: 220,
 	width: 360,
 	layout: {
 		type: 'fit'
@@ -23,11 +23,23 @@ Ext.define('BugTracker.view.Login', {
 		},
 		items: [{
 			name: 'user',
-			fieldLabel: 'User'
+			fieldLabel: translate('User')
 		},{
 			inputType: 'password',
 			name: 'password',
-			fieldLabel: 'Password'
+			fieldLabel: translate('Password')
+		},{
+			xtype: 'combo',
+			itemId: 'langChooser',
+			store: [['en','English'],['es','Spanish'],['fr','French']],
+			fieldLabel: 'Language',
+			anchor: '80%'
+		}, {
+			xtype: 'combo',
+			itemId: 'themeChooser',
+			store: [['default','Default'], ['ext-theme-access','Accessible'], ['ext-theme-classic','Classic']],
+			fieldLabel: 'Theme',
+			anchor: '80%'
 		}],
 		dockedItems: [{
 			xtype: 'toolbar',
@@ -38,7 +50,8 @@ Ext.define('BugTracker.view.Login', {
 				xtype: 'button',
 				itemId: 'cancel',
 				iconCls: 'cancel',
-				text: 'Cancel'
+				text: 'Cancel',
+				ui: 'red'
 			}, {
 				xtype: 'button',
 				itemId: 'submit',

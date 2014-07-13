@@ -13,8 +13,7 @@ Ext.define('BugTracker.view.ChartViewport', {
 
 	// here is where we'll include our chart work for testing    
 	items: [{ 
-		xtype: 'panel',
-		
+		xtype: 'panel',		
 		border: true,
 		layout: 'hbox',
 		items: [{
@@ -38,6 +37,25 @@ Ext.define('BugTracker.view.ChartViewport', {
 				}
 			]
 		}],
+		dockedItems: [{
+			xtype: 'toolbar',
+			items: [{
+				itemId: 'refreshButton',
+				text: 'Refresh',
+				tooltip: 'Reloads data from the server',
+                iconCls: 'refresh'
+        	}, {
+        		itemId: 'exportButton',
+        		text: 'Export',
+        		tooltip: 'Export to SVG',
+        		iconCls: 'export'
+        	}, { 
+        		itemId: 'exportPngButton',
+        		text: 'Export to PNG',
+        		tooltip: 'Export PNG',
+        		iconCls: 'export'
+        	}]
+        }],
 		flex: 1
 	}]
 });

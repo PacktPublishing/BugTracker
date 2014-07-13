@@ -241,6 +241,10 @@ var Bug = db.define('bugs', {
     type: Sequelize.INTEGER,
     references: 'importances',
     referencesKey: 'id'
+  },
+  estimate: {
+    type: Sequelize.INTEGER,
+    allowNull: true
   }
 },lookup_options);
 

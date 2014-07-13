@@ -4,6 +4,7 @@ Ext.define('BugTracker.view.Main', {
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
         'BugTracker.view.Menu'
+        
     ],
     
     xtype: 'app-main',
@@ -20,8 +21,14 @@ Ext.define('BugTracker.view.Main', {
     },{
         region: 'center',
         xtype: 'tabpanel',
-        items:[{
-            title: 'Center Tab 1'
-        }]
-    }]
+        itemId: 'main',
+        items:[]
+    }],
+
+    initComponent: function() {
+        this.callParent()
+        var grid = Ext.ComponentQuery.query('tabpanel')[0].add(Ext.create('BugTracker.view.BugMasterDetail',{ title: 'bugs'}))
+        grid.down('bugmaster').getStore().load()
+        grid.show()
+    }
 });

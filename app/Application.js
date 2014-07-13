@@ -1,20 +1,20 @@
 Ext.define('BugTracker.Application', {
     name: 'BugTracker',
 
-    requires: [ 'BugTracker.view.Login' ],
+    requires: [ 'BugTracker.store.Categories', 'BugTracker.store.Users', 'BugTracker.view.Login', 'BugTracker.view.Viewport', 'BugTracker.utils.Format' ],
 
     extend: 'Ext.app.Application',
 
     views: [
-        // TODO: add views here
+        'BugGrid', 'CategoriesGrid', 'UserGrid', 'UserForm'
     ],
 
     controllers: [
-        'Menu', 'Login', 'Main', 'Users'
+        'Menu', 'Login', 'Main', 'Users', 'Charts', 'Category', 'Bug', 'Translation', 'Theme'
     ],
 
     stores: [
-        // TODO: add stores here
+        'BugGrid', 'Categories', 'Users'
     ],
 
     init: function() {
@@ -32,12 +32,17 @@ Ext.define('BugTracker.Application', {
         Ext.Ajax.extraParams = { '_csrf': csrfToken };
 
         // general error handling
-        Ext.Ajax.on('requestexcpetion', function(conn, response) {
+        Ext.Ajax.on('requestexception', function(conn, response) {
             // if there is a proper message in the response, display it
             var obj = Ext.JSON.decode(response); 
             if (!obj.success && obj.message) {
                 Ext.Msg.alert('Error', obj.message);
             }
+        });
+
+        Ext.Ajax.on('beforerequest', function(conn) {
+            var lang = window.localStorage.getItem('userLang') || 'en';
+            conn.defaultHeaders['Accept-Language'] = lang + ';q=0.9';
         });
         
         Ext.QuickTips.init();
@@ -45,6 +50,7 @@ Ext.define('BugTracker.Application', {
 
     launch: function() {
         Ext.widget('login');
+        //Ext.create('BugTracker.view.Viewport')
     }
     
 });

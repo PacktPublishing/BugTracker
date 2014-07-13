@@ -18,6 +18,22 @@ Ext.define('BugTracker.model.Bug', {
 		type: 'int'
 	},
 	{
+		name: 'importance_id',
+		type: 'int'
+	},
+	{
+		name: 'version_id',
+		type: 'int'
+	},
+	{
+		name: 'reported_by_id',
+		type: 'int'
+	},
+	{
+		name: 'assigned_to_id',
+		type: 'int'
+	},
+	{
 		name: 'description',
 		type: 'string'
 	},
@@ -34,6 +50,10 @@ Ext.define('BugTracker.model.Bug', {
 		name: 'date_completed',
 		type: 'date',
 		dateFormat: 'c'
+	},
+	{ 
+		name: 'estimate', 
+		type: 'int'
 	},
 	{
 		name: 'createdAt',
@@ -54,15 +74,27 @@ Ext.define('BugTracker.model.Bug', {
 		associationKey: 'category'
 	}, {
 		name: 'version',
-		model: 'BugTracker.model.Version',
-		getterName: 'getVersion'
+		model: 'BugTracker.model.lookups.Version',
+		getterName: 'getVersion',
+		foreignKey: 'version_id',
+		associationKey: 'version'
+	}, {
+		name: 'importance',
+		model: 'BugTracker.model.lookups.Importance',
+		getterName: 'getImportance',
+		foreignKey: 'importance_id',
+		associationKey: 'importance',
 	}, {
 		name: 'assigned_to',
 		model: 'BugTracker.model.User',
-		getterName: 'getAssignedTo'
+		associatedName: 'AssignedTo',
+		foreignKey: 'assigned_to_id',
+		associationKey: 'assignedTo'
 	}, {
 		name: 'reported_by',
 		model: 'BugTracker.model.User',
-		getterName: 'getReportedBy'
+		associatedName: 'ReportedBy',
+		foreignKey: 'reported_by_id',
+		associationKey: 'reportedBy'
 	}]
 });

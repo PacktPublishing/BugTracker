@@ -16,7 +16,7 @@ Ext.define('BugTracker.proxy.BugTracker', {
 	},
 
 	isValidId: function(id) {
-        return id != 0;
+        return id != undefined && id != 0;
     }
     
 });

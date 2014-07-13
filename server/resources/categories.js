@@ -5,7 +5,7 @@ exports.index = function(req, res) {
 };
 
 exports.calendars = function(req, res) {
-	var mapResults = function(results, next) {
+	var mapResults = function(results) {
 		return res.json({
 			success: true,
 			results: results.map(function(i){
