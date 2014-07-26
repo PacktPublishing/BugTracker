@@ -33,9 +33,9 @@ app.use(function(req, res, next) {
   next();
 
 });*/
-app.use('/', routes);
+//app.get('/', function(req,res) { res.sendfile('../index.html'); });
 
-app.use(express.static(path.join(__dirname, 'public/')));
+app.use(express.static(path.join(__dirname, '../')));
 app.use(logger('dev'));
 
 app.post('/login', function(req, res) {
