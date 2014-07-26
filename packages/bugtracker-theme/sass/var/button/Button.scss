@@ -1,0 +1,28 @@
+$red-toolbar-red: #c00;
+
+$button-red-toolbar-border-color: $red-toolbar-red;
+$button-red-toolbar-border-color-over: lighten($red-toolbar-red, 40);
+$button-red-toolbar-border-color-focus: lighten($red-toolbar-red, 40);
+$button-red-toolbar-border-color-pressed: darken($red-toolbar-red, 40);
+$button-red-toolbar-border-color-disabled: grey;
+
+$button-red-toolbar-background-color: $red-toolbar-red;
+$button-red-toolbar-background-color-over: lighten($red-toolbar-red, 20);
+$button-red-toolbar-background-color-focus: lighten($red-toolbar-red, 20);
+$button-red-toolbar-background-color-pressed: darken($red-toolbar-red, 20);
+$button-red-toolbar-background-color-disabled: grey;
+
+$button-red-toolbar-background-gradient: null;
+$button-red-toolbar-background-gradient-over: null;
+$button-red-toolbar-background-gradient-focus: null;
+$button-red-toolbar-background-gradient-pressed: null;
+$button-red-toolbar-background-gradient-disabled: null;
+
+$button-red-toolbar-color: white;
+$button-red-toolbar-color-over: white;
+$button-red-toolbar-color-focus: white;
+$button-red-toolbar-color-pressed: lighten($red-toolbar-red, 80);
+$button-red-toolbar-color-disabled: silver;
+
+$button-red-toolbar-glyph-color: black;
+$button-red-toolbar-glyph-opacity: 0.5;

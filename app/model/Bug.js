@@ -83,7 +83,7 @@ Ext.define('BugTracker.model.Bug', {
 		model: 'BugTracker.model.lookups.Importance',
 		getterName: 'getImportance',
 		foreignKey: 'importance_id',
-		associationKey: 'importance',
+		associationKey: 'importance'
 	}, {
 		name: 'assigned_to',
 		model: 'BugTracker.model.User',

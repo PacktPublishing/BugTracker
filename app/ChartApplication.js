@@ -3,15 +3,17 @@ Ext.define('BugTracker.ChartApplication', {
 	extend: 'Ext.app.Application',
 	requires: [
 		'BugTracker.view.ChartViewport',
+		//'BugTracker.view.MapViewport',
 		'Ext.data.Store'
 	],
 
 	views: [
 	'ChartViewport'
+	//'MapViewport'
 	],
 
 	controllers: [
-	'Charts'
+	'Charts', 'Maps'
 	],
 
 	stores: [

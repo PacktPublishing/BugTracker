@@ -4,21 +4,46 @@ Ext.define('BugTracker.view.ChartViewport', {
 	'Ext.layout.container.Fit',
 	'BugTracker.view.charts.BugLine',
 	'BugTracker.view.charts.BugCategoryBar',
+	'BugTracker.view.charts.BugCategoryPie',
+	'BugTracker.view.charts.BugRadar',
 	'BugTracker.view.charts.BugGauge'
 	],
 
 	layout: {
 		type: 'fit'
 	},
-
-	// here is where we'll include our chart work for testing    
 	items: [{ 
+		layout: 'hbox', 
+		items: [{
+			xtype: 'chart-bugline',
+			flex: 1,
+			height: 600,
+			width: 500
+		}, {
+			layout: 'vbox',
+			flex: 1, 
+			height: 600,
+			items: [{
+				xtype: 'chart-buggauge',
+				flex: 1,
+				height: 200,
+				width: 400
+			}, {
+				xtype: 'chart-bugcategorybar',
+				height: 400,
+				width: 400
+			}]
+		}]
+	}]
+	// here is where we'll include our chart work for testing    
+	/*items: [{ 
 		xtype: 'panel',		
 		border: true,
 		layout: 'hbox',
 		items: [{
 			flex: 1,
 			height: 400,
+			width: 400,
 			xtype: 'chart-bugline'
 		}, { 
 			xtype: 'panel',
@@ -54,8 +79,13 @@ Ext.define('BugTracker.view.ChartViewport', {
         		text: 'Export to PNG',
         		tooltip: 'Export PNG',
         		iconCls: 'export'
+        	}, { 
+        		itemId: 'exportPdfButton',
+        		text: 'Export to PDF',
+        		tooltip: 'Export PDF',
+        		iconCls: 'exportPdf'
         	}]
         }],
 		flex: 1
-	}]
+	}]*/
 });

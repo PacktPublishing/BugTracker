@@ -11,6 +11,9 @@ var Resource = require('express-resource');
 var crypto = require('crypto');
 var models = require('./models.js')
 var gm = require('gm');
+var phantom = require('phantom');
+var tmp = require('tmp');
+var fs = require('fs');
 
 var app = express();
 
@@ -32,7 +35,7 @@ app.use(function(req, res, next) {
 });*/
 app.use('/', routes);
 
-app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(path.join(__dirname, 'public/')));
 app.use(logger('dev'));
 
 app.post('/login', function(req, res) {
@@ -64,6 +67,7 @@ app.resource('resources', require('./resources/resources'));
 app.resource('bugs', require('./resources/bugs'));
 app.resource('categories', require('./resources/categories'));
 app.resource('versions', require('./resources/versions'));
+app.get('/calendars', require('./resources/categories').calendars);
 
 app.get('/menu', require('./menu.js').get);
 
@@ -97,6 +101,32 @@ app.post('/png', function(req, res) {
       res.setHeader('Content-Type', 'image/png');
       stdout.pipe(res);
     }
+  });
+});
+
+// turns a url on the input into a pdf using phantom
+app.get('/pdf', function(req, res) {
+  var url = 'http://localhost:3000' + req.query.url;
+  tmp.tmpName({ template: 'tmp-XXXXXX.pdf' }, function(err, file) {
+    phantom.create(function(ph){
+      ph.createPage(function(page) {
+        page.set('viewportSize', { width: 1280, height: 720 });
+        page.set('paperSize', { format: 'A4', orientation: 'landscape', border: '1cm' });
+        page.set('zoomFactor', 0.75);
+            
+        page.open(url, function(status) {
+          setTimeout(function () {
+            page.render(file, function(){
+              ph.exit();
+              //res.setHeader('Content-Disposition', 'attachment;filename="chart.pdf"');
+              res.sendfile(file, null, function() {
+                fs.unlink(file, function(){});
+              });
+            });
+          }, 10000);
+        });
+      });
+    });
   });
 });
 

@@ -33,13 +33,15 @@ Ext.define('BugTracker.view.charts.BugLine', {
 		showInLegend: true,
 		xField: 'created',
 		yField: 'bugs',
-		title: 'Bugs Created'
+		title: 'Bugs Created',
+		shadowAttributes: {}
 	},{
 		type: 'line',
 		axis: 'left',
 		showInLegend: true,
 		xField: 'created',
 		yField: 'open',
-		title: 'Still open'
+		title: 'Still open',
+		shadowAttributes: {}
 	}]
 });

@@ -1,18 +1,24 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>BugTracker</title>
-	<!-- <x-compile> -->
-	<!-- <x-bootstrap> -->
-	<link rel="stylesheet" href="bootstrap.css">
-	<script src="ext/ext-dev.js"></script>
-	<script src="bootstrap.js"></script>
-	<!-- </x-bootstrap> -->
-	<script src="chartapp.js"></script>
-	<!-- </x-compile> -->
+    <meta charset="UTF-8">
+    <title>BugTracker</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=visualization"></script>
+    <!-- <x-compile> -->
+        <script src="ext/locale/ext-lang-es.js"></script>
+        <!-- <x-bootstrap> -->
+            <link rel="stylesheet" href="bootstrap.css">
+            <script src="ext/ext-dev.js"></script>
+            <script src="bootstrap.js"></script>
+            <script src="locale.js"></script>
+        <!-- </x-bootstrap> -->
+        <script src="chartapp.js"></script> 
+
+    <!-- </x-compile> -->
+    <link rel="stylesheet" href="lib/calendar/resources/css/calendar.css"/>
+
 </head>
 <body>
-	<form id="history-form" class="x-hide-display"><input type="hidden" id="x-history-field" /><iframe id="x-history-frame"></iframe></form>
+<form id="history-form" class="x-hide-display"><input type="hidden" id="x-history-field" /><iframe id="x-history-frame"></iframe></form>
 </body>
 </html>

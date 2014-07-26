@@ -8,7 +8,8 @@ Ext.define('BugTracker.view.Viewport', {
     layout: {
         type: 'fit'
     },
-
+    ariaRole: 'application',
+    
     items: [{
         xtype: 'app-main'
     }]

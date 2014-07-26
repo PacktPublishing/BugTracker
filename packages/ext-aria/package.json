@@ -1,0 +1,20 @@
+{
+  "name": "ext-aria",
+  "format": "1",
+  "version": "1.0.0.86",
+  "compatVersion": "1.0.0",
+  "creator": "Sencha",
+  "summary": "Ext JS Accessibility Support",
+  "detailedDescription": "Core support for Accessibility, ARIA and Section 508 for Ext JS 4.2.1+",
+  "type": "code",
+  "signatures": [
+    {
+      "name": "Sencha",
+      "uuid": "e93ebd09-85f5-46b6-bfc1-c7f06cf0b8a5",
+      "created": "2013-09-10T00:16:26Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "YRD+Btew53s\u003d",
+      "signature": "FcTxTAER1HyzN2pxxiCBdi5+ltyHZEzfHbiSQVuE8lFS1beAQGMLKfhkiMlYnMnaBAtBtlhOXqnVI88NgGfBlitjGoxCOTx0ldbXYrXg2XFAdKRQkojGldtZMR/vpDktZvZlods8qopbvMFDCk68N0w8IpIJ7qVvgyCJ0LigJwOMXh4BB0ob+wzD4BlA+jsp/lEfww2lnVzSuWKLtWt9HhYdIrLgcJoD7EJalzIrOpkcSspT8frrmB3mH23fLfK6n7FinsrLVuXyegjwV0E7xI3oOVnWOMmpdhkidL9B7x7JHKmNUDlqRLXa+KUK624bJhrm0gHIFMUAMnFX0R7NFLc6+nU7Po5aLXXl8I5UxwKQePsasaJuqk8anEN2eh3a4Ib6jwM7uqlbLQd/Z4TIPBBYBiuGa6TEWgpxuHL8jpB+apCVrwQLv4qn69WAI/OvclCSnjnzEOt/DsTN2f1sBgtc5PeQU9hoA6kSaZNRXOtVARUzgRcn/EpQoVigW6rpV62tGB6zkpuzo4sSPiMOoJRAbXFLd3kIVv3GtGmHxSZrNMOK4KlEu3QuJUfGCPO56V/WB1O0nQi+2y8168225zXd1GpuYy+jFa58vzzW/hPycUIdUkizUgGw/OL31OBVc9GiRn6XBhtaEfC5znR6FLp/JKZtNlKVn7N331h0geM\u003d"
+    }
+  ]
+}

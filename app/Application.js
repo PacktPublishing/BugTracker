@@ -1,7 +1,14 @@
 Ext.define('BugTracker.Application', {
     name: 'BugTracker',
 
-    requires: [ 'BugTracker.store.Categories', 'BugTracker.store.Users', 'BugTracker.view.Login', 'BugTracker.view.Viewport', 'BugTracker.utils.Format' ],
+    requires: [ 
+        'Ext.util.History', 
+        'BugTracker.store.Categories', 
+        'BugTracker.store.Users', 
+        'BugTracker.view.Login', 
+        'BugTracker.view.Viewport', 
+        'BugTracker.utils.Format',
+        'Ext.state.LocalStorageProvider' ],
 
     extend: 'Ext.app.Application',
 
@@ -46,11 +53,22 @@ Ext.define('BugTracker.Application', {
         });
         
         Ext.QuickTips.init();
+        Ext.FocusManager.enable({focusFrame: true} );
+        Ext.History.init();
+        Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
     },
 
     launch: function() {
-        Ext.widget('login');
-        //Ext.create('BugTracker.view.Viewport')
+        //Ext.widget('login');
+        Ext.create('BugTracker.view.Viewport')
+
+        var me = this;
+        var map = new Ext.util.KeyMap(document,[{
+            key: 'n',
+            ctrl: true,
+            shift: true,
+            handler: me.getController('Bug').newBug
+        }]);
     }
     
 });

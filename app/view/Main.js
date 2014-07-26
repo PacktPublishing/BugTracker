@@ -22,6 +22,7 @@ Ext.define('BugTracker.view.Main', {
         region: 'center',
         xtype: 'tabpanel',
         itemId: 'main',
+        ariaRole: 'region',
         items:[]
     }],
 

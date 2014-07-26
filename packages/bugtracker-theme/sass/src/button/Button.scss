@@ -1,0 +1,64 @@
+@include extjs-button-ui(
+    $ui: 'red-toolbar-small',
+
+    $border-radius: $button-small-border-radius,
+    $border-width: $button-small-border-width,
+
+    $border-color: $button-red-toolbar-border-color,
+    $border-color-over: $button-red-toolbar-border-color-over,
+    $border-color-focus: $button-red-toolbar-border-color-focus,
+    $border-color-pressed: $button-red-toolbar-border-color-pressed,
+    $border-color-disabled: $button-red-toolbar-border-color-disabled,
+
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+
+    $background-color: $button-red-toolbar-background-color,
+    $background-color-over: $button-red-toolbar-background-color-over,
+    $background-color-focus: $button-red-toolbar-background-color-focus,
+    $background-color-pressed: $button-red-toolbar-background-color-pressed,
+    $background-color-disabled: $button-red-toolbar-background-color-disabled,
+
+    $background-gradient: $button-red-toolbar-background-gradient,
+    $background-gradient-over: $button-red-toolbar-background-gradient-over,
+    $background-gradient-focus: $button-red-toolbar-background-gradient-focus,
+    $background-gradient-pressed: $button-red-toolbar-background-gradient-pressed,
+    $background-gradient-disabled: $button-red-toolbar-background-gradient-disabled,
+
+    $color: $button-red-toolbar-color,
+    $color-over: $button-red-toolbar-color-over,
+    $color-focus: $button-red-toolbar-color-focus,
+    $color-pressed: $button-red-toolbar-color-pressed,
+    $color-disabled: $button-red-toolbar-color-disabled,
+
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-color: $button-red-toolbar-glyph-color,
+    $glyph-opacity: $button-red-toolbar-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+
+    $include-split-noline-arrows: $button-toolbar-include-split-noline-arrows,
+
+    $opacity-disabled: $button-toolbar-opacity-disabled,
+    $inner-opacity-disabled: $button-toolbar-inner-opacity-disabled
+);
