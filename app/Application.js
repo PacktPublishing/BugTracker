@@ -3,6 +3,7 @@ Ext.define('BugTracker.Application', {
 
     requires: [ 
         'Ext.util.History', 
+        'BugTracker.proxy.BugTracker',
         'BugTracker.store.Categories', 
         'BugTracker.store.Users', 
         'BugTracker.view.Login', 
