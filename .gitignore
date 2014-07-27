@@ -1,4 +1,6 @@
 ext/
 .sencha/
+.sencha_backup/
 server/node_modules
 build/
+server/database.sqlite

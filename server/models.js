@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 var Sequelize = require('sequelize'),
-db = new Sequelize('BugTracker', 'root', null, { logging: console.log, dialect: 'mysql' });
+db = new Sequelize('BugTracker', 'root', null, { dialect: 'sqlite', storage: 'database.sqlite' });
 
 var filter_attributes = function(attribute) {
   return (attribute != 'password');

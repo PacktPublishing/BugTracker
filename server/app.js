@@ -34,7 +34,18 @@ app.use(function(req, res, next) {
 });*/
 //app.get('/', function(req,res) { res.sendfile('../index.html'); });
 
-app.use(express.static(path.join(__dirname, 'public/')));
+app.all('*', function(req, res, next) {
+  //"http://bugtracker-packt.s3-website-eu-west-1.amazonaws.com",
+  //"http://d1irz7fk6k29gk.cloudfront.net"
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With,X-CSRF-Token");
+  res.header("Access-Control-Max-Age", 60 * 60);
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
+
+app.use(express.static(path.join(__dirname, '../')));
 app.use(logger('dev'));
 
 app.post('/login', function(req, res) {

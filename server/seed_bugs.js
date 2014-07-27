@@ -75,7 +75,6 @@ function randomBug(callback, chainer, allItems) {
 	};
 	var dao = models.Bug.build(bug);
 	dao.dataValues.createdAt = created;
-	console.log(dao);
 	chainer.add(dao.save());
 	callback();
 }
@@ -89,8 +88,8 @@ var makeLookup = function(key, values, mapper, chainer) {
 var chainer = new Sequelize.Utils.QueryChainer();
 
 chainer
-	.add(models.db, 'query', ["drop table roles_resources"])
-	.add(models.db, 'query', ["drop table users_roles"])
+	.add(models.db, 'query', ["drop table if exists roles_resources"])
+	.add(models.db, 'query', ["drop table if exists users_roles"])
 	.add(models.Bug, 'drop')
 	.add(models.User, 'drop')
 	.add(models.Group, 'drop')

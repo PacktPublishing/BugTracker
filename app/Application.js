@@ -7,7 +7,7 @@ Ext.define('BugTracker.Application', {
         'BugTracker.store.Categories', 
         'BugTracker.store.Users', 
         'BugTracker.view.Login', 
-        'BugTracker.view.Viewport', 
+        'BugTracker.view.Viewport',
         'BugTracker.utils.Format',
         'Ext.state.LocalStorageProvider' ],
 
@@ -48,10 +48,13 @@ Ext.define('BugTracker.Application', {
             }
         });
 
-        Ext.Ajax.on('beforerequest', function(conn) {
-            var lang = window.localStorage.getItem('userLang') || 'en';
-            conn.defaultHeaders['Accept-Language'] = lang + ';q=0.9';
-        });
+        if (window.backendUrl) {
+            Ext.Ajax.on('beforerequest', function(conn, options, eOpts) {
+                if (options.url.indexOf('://') == -1) {
+                    options.url = window.backendUrl + options.url;
+                }
+            });
+        }
         
         Ext.QuickTips.init();
         Ext.FocusManager.enable({focusFrame: true} );
