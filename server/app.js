@@ -26,13 +26,22 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(session({ secret: 'randomstring' }))
 
-/*app.use(csrf());
+app.use(csrf());
 app.use(function(req, res, next) {
   res.locals.csrfToken = req.csrfToken();
   next();
 
-});*/
-//app.get('/', function(req,res) { res.sendfile('../index.html'); });
+});
+
+var sendIndex = function(req,res) {
+   fs.readFile('../index.html', function(err, file) {
+    res.set('Content-Type', 'text/html');
+    res.send(200, file.toString().replace('<%= token %>', res.local.csrfToken));
+  });
+}
+
+app.get('/', sendIndex);
+app.get('/index.html', sendIndex);
 
 app.all('*', function(req, res, next) {
   //"http://bugtracker-packt.s3-website-eu-west-1.amazonaws.com",
