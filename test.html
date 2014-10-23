@@ -1,39 +1,30 @@
-<!DOCTYPE HTML>
+<!doctype>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>BugTracker</title>
-	<!-- <x-compile> -->
-	<!-- <x-bootstrap> -->
-	<link rel="stylesheet" href="bootstrap.css">
-	<style> 
-		.bug-wrap {
-			width: 200px;
-			float: left;
-			border: 1px solid silver; 
-			margin: 0.5em;
-		}
-		.importance-Critical { 
-			border: 2px solid #c00
-		}
-		.importance {
-			background: silver;
-			font-weight: bold;
-		}
-		.importance-Critical .importance { 
-			background: #c00;
-			color: white;
-		}
-		
-	</style>
-	<script src="ext/ext-dev.js"></script>
-	<script src="bootstrap.js"></script>
-	<!-- </x-bootstrap> -->
-	<script src="testapp.js"></script>
-	<!-- </x-compile> -->
-	<script src="locale.js"></script>
+    <title id="page-title">BugTracker Tests</title>
+
+    <link rel="stylesheet" type="text/css" href="app-test/lib/jasmine-2.0.3/jasmine.css">
+    <meta name="csrf-token" value=""/>
+    <script type="text/javascript" src="ext/ext-dev.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+
+    <!-- test launcher -->
+    <script src="locale.js"></script>
+    <script type="text/javascript" src="app-test.js"></script>
+
+
+    <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/jasmine.js"></script>
+    <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/jasmine-html.js"></script>
+    <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/boot.js"></script>
+    
+
+    <!-- include specs here -->
+    <script type="text/javascript" src="app-test/spec/basic.js"></script>
+    <script type="text/javascript" src="app-test/spec/BugsController.js"></script>
+
+
+
 </head>
 <body>
-	<form id="history-form" class="x-hide-display"><input type="hidden" id="x-history-field" /><iframe id="x-history-frame"></iframe></form>
 </body>
 </html>
