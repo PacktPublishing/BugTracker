@@ -22,7 +22,7 @@ describe('Selenium Test Case', function() {
       done(err);
     })
     .init({
-      browserName: 'firefox'
+      browserName: 'chrome'
     })
     .get("http://localhost:3000/index.html")
     .elementByXPath("//span[.=\"Bugs\"]", function(err, el) {
