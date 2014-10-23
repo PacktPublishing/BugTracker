@@ -31,6 +31,9 @@ Ext.define('BugTracker.controller.Bug', {
 			},
 			'bugtable': {
 				render: this.onBugCardRender
+			}, 
+			'bugform #saveButton': {
+				click: this.onFormSaveButtonClick
 			}
 		});
 	},
@@ -44,6 +47,17 @@ Ext.define('BugTracker.controller.Bug', {
 			items: [ { xtype: 'bugform' }]
 		});
 		w.show();
+	},
+
+	onFormSaveButtonClick: function(button, e, options) { 
+		var win = button.up('window'),
+			form = win.down('form').getForm();
+		form.submit({
+			success: function(form, action) {
+				win.close();
+			}
+		});
+		
 	},
 
 	onRender: function(target) {
@@ -66,6 +80,6 @@ Ext.define('BugTracker.controller.Bug', {
 
 	bindDetailPanel: function (record) {
 		var me = this, detail = me.getDetail();
-		detail.update(detail.tpl.apply(record));
+		detail.update(detail.tpl.apply(record), true);
 	}
 });

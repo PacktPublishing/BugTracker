@@ -136,8 +136,8 @@ makeLookup('Menu', [
 	{ id: 3, parent_id: 1, text: 'New Bug', tooltip: 'Create a new bug', actionId: 'bugsNew', iconCls: 'new', resource_id: null},
 	{ id: 4, parent_id: 1, text: 'Report', tooltip: '', actionId: 'bugsReport', iconCls: 'report', resource_id: null},
 	{ id: 5, parent_id: null, text: 'Calendar', tooltip: '', actionId: 'calendar', iconCls: 'calendar', resource_id: null},
-], identity, chainer);
-
+].map(function(i) { i.cls = i.iconCls; return i}), identity, chainer);
+ 
 chainer
   	.runSerially()
   	.success(function() {

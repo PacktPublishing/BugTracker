@@ -17,6 +17,9 @@ Ext.define('BugTracker.model.MenuTree',{
 		},{
 			name: 'iconCls',
 			type: 'string'
+		}, {
+			name: 'cls',
+			type: 'string'
 		}
 	]
 });

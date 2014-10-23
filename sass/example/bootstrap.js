@@ -67,6 +67,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.controller.Translation": [],
   "BugTracker.controller.Users": [],
   "BugTracker.model.AbstractLookup": [],
+  "BugTracker.model.Broken": [],
   "BugTracker.model.Bug": [],
   "BugTracker.model.BugGrid": [],
   "BugTracker.model.Category": [],
@@ -80,6 +81,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.model.lookups.Importance": [],
   "BugTracker.model.lookups.Version": [],
   "BugTracker.proxy.BugTracker": [],
+  "BugTracker.store.Broken": [],
   "BugTracker.store.BugGrid": [],
   "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],
@@ -994,6 +996,7 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.controller.Translation": [],
   "BugTracker.controller.Users": [],
   "BugTracker.model.AbstractLookup": [],
+  "BugTracker.model.Broken": [],
   "BugTracker.model.Bug": [],
   "BugTracker.model.BugGrid": [],
   "BugTracker.model.Category": [],
@@ -1009,6 +1012,7 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.proxy.BugTracker": [
     "proxy.bugtracker"
   ],
+  "BugTracker.store.Broken": [],
   "BugTracker.store.BugGrid": [],
   "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],

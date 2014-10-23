@@ -36,7 +36,7 @@ app.use(function(req, res, next) {
 var sendIndex = function(req,res) {
    fs.readFile('../index.html', function(err, file) {
     res.set('Content-Type', 'text/html');
-    res.send(200, file.toString().replace('<%= token %>', res.local.csrfToken));
+    res.send(200, file.toString().replace('<%= token %>', res.locals.csrfToken));
   });
 }
 

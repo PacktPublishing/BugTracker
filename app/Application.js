@@ -38,7 +38,7 @@ Ext.define('BugTracker.Application', {
             'X-CSRF-Token': csrfToken
         };
         Ext.Ajax.extraParams = { '_csrf': csrfToken };
-
+        
         // general error handling
         Ext.Ajax.on('requestexception', function(conn, response) {
             // if there is a proper message in the response, display it
@@ -55,6 +55,9 @@ Ext.define('BugTracker.Application', {
                 }
             });
         }
+
+        Ext.Ajax.cors = true;
+        Ext.Ajax.withCredentials = true;
         
         Ext.QuickTips.init();
         Ext.FocusManager.enable({focusFrame: true} );

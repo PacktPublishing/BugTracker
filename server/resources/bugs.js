@@ -11,11 +11,14 @@ var page = function(model, req, res, options) {
 			return [i.property.replace(/_/, '.'), i.direction];
 		});
 	}
-	var _options = _.extend(options || {}, {
-		offset: req.query.start,
-		limit: req.query.limit,
-		order: processExtSort(JSON.parse(req.query.sort))
-	});
+	var _options = options;
+	if (req.query.sort) {
+		_options = _.extend(_options, {
+			offset: req.query.start,
+			limit: req.query.limit,
+			order: processExtSort(JSON.parse(req.query.sort))
+		});
+	}
 	model.findAndCountAll(_options).on('success', db2json(res));
 }
 
@@ -80,7 +83,14 @@ exports.show = function(req, res) {
 }
 
 exports.create = function(req,res) {
-	models.Bug.create(req.body[0])
+	var body; 
+	if (typeof(req.body) === 'array') {
+		body = req.body[0]
+	} else {
+		body = req.body;
+	}
+	body.reported_by_id = 1
+	models.Bug.create(body)
 		.on('success', function(result) {
 			res.json(201, {
 				success: true,

@@ -147,7 +147,8 @@ var Menu = db.define('menus', {
 	tooltip: defaultTextField,
 	actionId: defaultTextField,
 	iconCls: defaultTextField,
-	resource_id: {
+  cls: defaultTextField,
+  resource_id: {
 		type: Sequelize.INTEGER,
 		references: 'resources',
 		referencesKey: 'id'
@@ -198,7 +199,7 @@ var Bug = db.define('bugs', {
   },
   description: {
     type: Sequelize.TEXT,
-    allowNull: false
+    allowNull: true
   },
   summary: {
     type: Sequelize.STRING,
@@ -220,27 +221,32 @@ var Bug = db.define('bugs', {
   assigned_to_id: {
     type: Sequelize.INTEGER,
     references: "users",
-    referencesKey: "id"
+    referencesKey: "id",
+    allowNull: true
   },
   category_id: {
     type: Sequelize.INTEGER,
     references: "categories",
-    referencesKey: "id"
+    referencesKey: "id",
+    allowNull: true
   },
   version_id: {
     type: Sequelize.INTEGER,
     references: "versions",
-    referencesKey: "id"
+    referencesKey: "id",
+    allowNull: true
   },
   os_id: {
     type: Sequelize.INTEGER,
     references: 'oses',
-    referencesKey: 'id'
+    referencesKey: 'id',
+    allowNull: true
   },
   importance_id: {
     type: Sequelize.INTEGER,
     references: 'importances',
-    referencesKey: 'id'
+    referencesKey: 'id',
+    allowNull: true
   },
   estimate: {
     type: Sequelize.INTEGER,

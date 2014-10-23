@@ -18,7 +18,8 @@ Ext.define('BugTracker.controller.Menu', {
 		this.menuActions = {
 			bugsList: this.showBugList,
 			bugsReport: this.showBugReport,
-			calendar: this.showCalendar
+			calendar: this.showCalendar,
+			bugsNew: BugTracker.getApplication().getController('Bug').newBug
 		};
 	},
 	refs: [
@@ -99,4 +100,5 @@ Ext.define('BugTracker.controller.Menu', {
 			closable: true
 		}));
 	}
+
 });

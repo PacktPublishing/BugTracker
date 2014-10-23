@@ -136,6 +136,7 @@ Ext.define('BugTracker.view.BugGrid', {
 	{
 		text: 'Summary',
 		dataIndex: 'summary',
+		renderer: Ext.util.Format.htmlEncode,
 		editor: {
 			xtype: 'textfield'
 		}
