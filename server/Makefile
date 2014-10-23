@@ -1,9 +1,9 @@
 REPORTER = tap 
 
 test:
-	NODE_ENV=test node seed_bugs
-	NODE_ENV=test ./node_modules/.bin/mocha \
-		--reporter $(REPORTER) 
+	@NODE_ENV=test node seed_bugs > /dev/null
+	@NODE_ENV=test ./node_modules/.bin/mocha \
+		--reporter $(REPORTER)
 
 test-w:
 	NODE_ENV=test ./node_modules/.bin/mocha \
