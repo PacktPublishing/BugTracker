@@ -1,0 +1,4 @@
+@import "compass/css3/transform";
+.x-tip {
+	@include translateZ(0);
+}
