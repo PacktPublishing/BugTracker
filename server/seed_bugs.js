@@ -1,5 +1,5 @@
 // generate fake data
-var Faker = require('Faker'), 
+var Faker = require('faker'), 
 	models = require('./models'), 
 	async = require('async'), 
 	crypto = require('crypto'),
@@ -29,7 +29,7 @@ function makeStorer(name, callback) {
 var nullCallback = function(error, results) {}
 
 function randomText(words) {
-	return Faker.Lorem.words(Math.round(words)).join(' ');
+	return Faker.lorem.words(Math.round(words)).join(' ');
 }
 
 function randomIdFrom(items) {
@@ -164,9 +164,9 @@ chainer
 					function(user) {
 						if (typeof(user) === 'number') {
 							return {
-								name_first: Faker.Name.firstName(),
-								name_last: Faker.Name.lastName(),
-								email: Faker.Internet.email(),
+								name_first: Faker.name.firstName(),
+								name_last: Faker.name.lastName(),
+								email: Faker.internet.email(),
 								group_id: randomIdFrom(groups),
 								password: crypto.createHash('md5').update('a').digest('hex')
 							}
