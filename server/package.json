@@ -31,7 +31,7 @@
     "mocha": "~1.21.4",
     "underscore": "~1.6.0",
     "uuid-js": "~0.7.4",
-    "faker": "*"
-
+    "faker": "*",
+    "async": "~0.9.0"
   }
 }
