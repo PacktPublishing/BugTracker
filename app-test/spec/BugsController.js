@@ -3,7 +3,7 @@ describe('BugsController refs', function() {
 	var ctrl, view;
 
 	beforeEach(function(){
-		debugger; 
+		var Application = BugTracker.getApplication();
 		if (!ctrl) ctrl = Application.getController('Bug');
 		if (!view) view = Ext.widget('bugmasterdetail', { renderTo: Ext.getBody() });
 	});

@@ -5,25 +5,29 @@
 
     <link rel="stylesheet" type="text/css" href="app-test/lib/jasmine-2.0.3/jasmine.css">
     <meta name="csrf-token" value=""/>
+
     <script type="text/javascript" src="ext/ext-dev.js"></script>
     <script type="text/javascript" src="bootstrap.js"></script>
+    <script src="locale.js"></script>
 
     <!-- test launcher -->
-    <script src="locale.js"></script>
-    <script type="text/javascript" src="app-test.js"></script>
-
-
     <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/jasmine.js"></script>
     <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/jasmine-html.js"></script>
     <script type="text/javascript" src="app-test/lib/jasmine-2.0.3/boot.js"></script>
-    
+    <script type="text/javascript" src="app-test/lib/jasmine-reporters/jasmine-junit.js"></script>
+    <script type="text/javascript">
+        jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+            savePath: 'app-test/reports/'
+        }));
+    </script>
+
+    <script type="text/javascript" src="app-test.js"></script>
 
     <!-- include specs here -->
     <script type="text/javascript" src="app-test/spec/basic.js"></script>
     <script type="text/javascript" src="app-test/spec/BugsController.js"></script>
 
-
-
+    
 </head>
 <body>
 </body>
