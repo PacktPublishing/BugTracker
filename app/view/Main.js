@@ -3,8 +3,8 @@ Ext.define('BugTracker.view.Main', {
     requires:[
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
-        'BugTracker.view.Menu'
-        
+        'BugTracker.view.Menu',
+        'BugTracker.view.LanguageChooser'
     ],
     
     xtype: 'app-main',
@@ -24,6 +24,33 @@ Ext.define('BugTracker.view.Main', {
         itemId: 'main',
         ariaRole: 'region',
         items:[]
+    }, {
+        region: 'north',
+        xtype: 'toolbar', 
+        height: 36,
+        items: [{
+            xtype: 'button',
+            text: 'New Bug',
+            itemId: 'btnNewBug',
+            iconCls: 'newBug',
+        }, {
+            xtype: 'textfield',
+            emptyText: 'Search',
+            width: 280
+        }, '->', {
+            xtype: 'languageChooser',
+            value: 'en'
+        }, {
+            xtype: 'button',
+            text: 'Logout',
+            iconCls: 'logout'
+        }]
+    }],
+
+    dockedItems: [{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: []
     }],
 
     initComponent: function() {

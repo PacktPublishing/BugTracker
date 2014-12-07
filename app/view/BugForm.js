@@ -2,6 +2,7 @@ Ext.define('BugTracker.view.BugForm', {
 	extend: 'Ext.form.Panel',
 	alias: 'widget.bugform',
 	url: '/bugs',
+	margin: 10,
 	items: [{
 		xtype: 'combo',
 		store: 'Users',
@@ -17,15 +18,33 @@ Ext.define('BugTracker.view.BugForm', {
 		name: 'summary',
 		fieldLabel: 'Summary',
 		width: 400,
-		height: 150
+		height: 100
 	}, {
-		type: 'panel',
-		html: 'etc...'
+		xtype: 'combo',
+		store: 'Categories',
+		name: 'category_id',
+		fieldLabel: 'Category',
+		valueField: 'id',
+		displayField: 'name'
+	}, {
+		xtype: 'combo',
+		store: 'Importances',
+		name: 'importance_id',
+		fieldLabel: 'Importance',
+		valueField: 'id',
+		displayField: 'name'
+	}, {
+		xtype: 'textarea',
+		name: 'description',
+		fieldLabel: 'Description',
+		anchor: '95%',
+		height: 300
 	}], 
 	dockedItems: [{
 		xtype: 'toolbar',
 		dock: 'bottom',
 		items: [
+			'->',
 			{
 				xtype: 'button',
 				itemId: 'saveButton',

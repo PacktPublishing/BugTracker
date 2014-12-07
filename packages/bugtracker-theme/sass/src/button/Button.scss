@@ -62,3 +62,17 @@
     $opacity-disabled: $button-toolbar-opacity-disabled,
     $inner-opacity-disabled: $button-toolbar-inner-opacity-disabled
 );
+
+.save {
+    background-image: theme-background-image('btn/disk');
+}
+.cancel {
+    background-image: theme-background-image('btn/cancel');
+}
+.logout {
+    background-image: theme-background-image('btn/logout');
+}
+.newBug {
+    background-image: theme-background-image('btn/newBug');
+}
+

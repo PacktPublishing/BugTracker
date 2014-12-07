@@ -85,6 +85,7 @@ app.resource('resources', require('./resources/resources'));
 
 app.resource('bugs', require('./resources/bugs'));
 app.resource('categories', require('./resources/categories'));
+app.resource('importance', require('./resources/importance'));
 app.resource('versions', require('./resources/versions'));
 app.get('/calendars', require('./resources/categories').calendars);
 

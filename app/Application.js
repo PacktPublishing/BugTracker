@@ -22,7 +22,7 @@ Ext.define('BugTracker.Application', {
     ],
 
     stores: [
-        'BugGrid', 'Categories', 'Users'
+        'BugGrid', 'Categories', 'Importances', 'Users'
     ],
 
     init: function() {
@@ -60,7 +60,7 @@ Ext.define('BugTracker.Application', {
         Ext.Ajax.withCredentials = true;
         
         Ext.QuickTips.init();
-        Ext.FocusManager.enable({focusFrame: true} );
+        //Ext.FocusManager.enable({focusFrame: true} );
         Ext.History.init();
         Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
     },

@@ -1,8 +1,8 @@
 Ext.define('BugTracker.controller.Bug', {
 	extend: 'Ext.app.Controller',
 	views: [
-	'BugMasterDetail',
-	'BugForm'
+		'BugMasterDetail',
+		'BugForm'
 	],
 	stores: ['BugGrid'],
 
@@ -34,21 +34,24 @@ Ext.define('BugTracker.controller.Bug', {
 			}, 
 			'bugform #saveButton': {
 				click: this.onFormSaveButtonClick
+			},
+			'#btnNewBug': {
+				click: this.newBug
 			}
 		});
 	},
 
+	/* New Bug Handlers */
 	newBug: function() {
 		var w = Ext.create('Ext.window.Window', { 
 			width: 500, 
-			height: 400, 
+			height: 600, 
 			layout: 'fit', 
 			title: 'New bug', 
 			items: [ { xtype: 'bugform' }]
 		});
 		w.show();
 	},
-
 	onFormSaveButtonClick: function(button, e, options) { 
 		var win = button.up('window'),
 			form = win.down('form').getForm();
@@ -56,10 +59,10 @@ Ext.define('BugTracker.controller.Bug', {
 			success: function(form, action) {
 				win.close();
 			}
-		});
-		
+		});	
 	},
 
+	/* Render Handlers */
 	onRender: function(target) {
 		
 	},
@@ -71,13 +74,13 @@ Ext.define('BugTracker.controller.Bug', {
 		me.getStore('BugGrid').reload();
 	},
 
+	/* Master Details Controls */
 	onMasterSelectionChange: function (sm, selected, eOpts) {
 		var me = this;
 		if (selected.length == 1) {
 			me.bindDetailPanel(selected[0]);
 		}
 	},
-
 	bindDetailPanel: function (record) {
 		var me = this, detail = me.getDetail();
 		detail.update(detail.tpl.apply(record), true);

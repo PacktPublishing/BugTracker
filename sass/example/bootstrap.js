@@ -86,6 +86,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],
   "BugTracker.store.Event": [],
+  "BugTracker.store.Importances": [],
   "BugTracker.store.MenuTree": [],
   "BugTracker.store.Test": [],
   "BugTracker.store.Users": [],
@@ -102,6 +103,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "BugTracker.view.CategoriesGrid": [],
   "BugTracker.view.ChartViewport": [],
   "BugTracker.view.GMap": [],
+  "BugTracker.view.LanguageChooser": [],
   "BugTracker.view.Login": [],
   "BugTracker.view.Main": [],
   "BugTracker.view.MapViewport": [],
@@ -1017,6 +1019,7 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.store.Calendar": [],
   "BugTracker.store.Categories": [],
   "BugTracker.store.Event": [],
+  "BugTracker.store.Importances": [],
   "BugTracker.store.MenuTree": [],
   "BugTracker.store.Test": [],
   "BugTracker.store.Users": [],
@@ -1052,6 +1055,9 @@ Ext.ClassManager.addNameAliasMappings({
   "BugTracker.view.ChartViewport": [],
   "BugTracker.view.GMap": [
     "widget.gmapheatpanel"
+  ],
+  "BugTracker.view.LanguageChooser": [
+    "widget.languageChooser"
   ],
   "BugTracker.view.Login": [
     "widget.login"
