@@ -1,4 +1,8 @@
-.sencha_backup/
+sencha_backup/
 server/node_modules
 build/
 server/database.sqlite
+jenkins.war
+.travis.yml
+server/tap.tap
+.sencha_backup

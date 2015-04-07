@@ -1,5 +1,6 @@
 Ext.define('BugTracker.view.Login', {
 	extend: 'Ext.window.Window',
+	requires: ['BugTracker.view.LanguageChooser'],
 	alias: 'widget.login',
 	autoShow: true,
 	height: 220,
@@ -29,10 +30,8 @@ Ext.define('BugTracker.view.Login', {
 			name: 'password',
 			fieldLabel: translate('Password')
 		},{
-			xtype: 'combo',
+			xtype: 'languageChooser',
 			itemId: 'langChooser',
-			store: [['en','English'],['es','Spanish'],['fr','French']],
-			fieldLabel: 'Language',
 			anchor: '80%'
 		}, {
 			xtype: 'combo',

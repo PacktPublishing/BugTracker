@@ -97,7 +97,7 @@ app.get('/charts/bugsByCategory', require('./charts/bugs').bugsByCategory);
 app.get('/charts/bugsByTime', require('./charts/bugs').bugsByTime);
 app.get('/charts/bugsProgress', require('./charts/bugs').bugsProgress);
 app.get('/charts/bugsCumulativeByTime', require('./charts/bugs').bugsCumulativeByTime);
-
+app.get('/charts/bugsByCategoryByDay', require('./charts/bugs').bugsByCategoryByDay);
 
 // reports
 app.get('/reports/bugs', require('./reports/bugs').index);

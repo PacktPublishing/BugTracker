@@ -1,38 +1,42 @@
 Ext.define('BugTracker.view.charts.BugRadar', {
 	extend: 'Ext.chart.Chart',
-	alias: 'widget.chart-bugradar',
+	alias: 'widget.bugradar',
 	requires: ['Ext.chart.*', 'BugTracker.store.Test'],
 	store: {
 		fields: [
-			{ name: 'category', type: 'string' }, 
-			{ name: 'bugs', type: 'float' }, 
-			{ name: 'open', type: 'float' }
+			{ name: 'weekday', type: 'string' }, 
+			{ name: 'Blocker', type: 'float' },
+			{ name: 'Bug', type: 'float' },
+			{ name: 'Improvement', type: 'float' }
 		],
-		proxy: { type: 'bugtracker', url: '/charts/bugsByCategory'},
+		proxy: { type: 'bugtracker', url: '/charts/bugsByCategoryByDay'},
 		autoLoad: true
 	},
-
 	legend: {
 		position: 'right'
 	},
 	insetPadding: 20,
 	animate: true,
 	axes: [{
-		type: 'Radial',
+		type: 'radial',
 		position: 'radial',
+		minimum: 0,
+		maximum: 10,
 		label: { 
-			display: false
+			display: true
 		}
 	}],
-	series: [{
-		type: 'radar',
-		xField: 'category',
-		yField: 'bugs',
-		showInLegend: true,
-		showMarkers: true,
-		style: {
-	        'stroke-width': 2,
-            fill: 'none'
+	series: ['Blocker','Bug','Improvement'].map(function(i) {
+		return {
+			type: 'radar',
+			xField: 'weekday',
+			yField: i,
+			showInLegend: true,
+			showMarkers: true,
+			style: {
+	        	'stroke-width': 2,
+            	fill: 'none'
+        	}
         }
-	}]
+    })
 });

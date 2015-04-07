@@ -1,5 +1,6 @@
 var Sequelize = require('Sequelize'),
-	db = new Sequelize('BugTracker', 'root', null, { logging: console.log, dialect: 'mysql' });
+	db = new Sequelize('BugTracker', 'root', null, { logging: console.log, dialect: 'mysql' }),
+	_ = require('lodash');
 
 var buildWrapperForExt = function(res, mapper) {
 	return function(results) {
@@ -20,7 +21,33 @@ var bugsByCategory = function(req,res) {
 		from categories c \
 		left join bugs b on b.category_id = c.id \
 		left join (select category_id, count(id) as open from bugs where date_completed is null) as o on o.category_id = c.id \
-		group by c.name',res);
+		group by c.name', res);
+
+
+		
+}
+
+var bugsByCategoryByDay = function(req,res) {
+	var sql = 'select c.name as category, weekday(b.createdAt) weekday, count(b.id) as bugs \
+		from categories c \
+		left join bugs b on b.category_id = c.id \
+		group by c.name, weekday(b.createdAt)';
+
+	var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+	db.query(sql, null, {raw: true})
+		.then(function(results) {
+			// pivot the results
+			var output = {}
+			results.forEach(function(el) {
+				k = el.weekday;
+				output[k] = output[k] || {};
+				output[k]['weekday'] = days[k];
+				output[k][el.category] = el.bugs;
+			});
+			return _.values(output);
+		})
+		.then(buildWrapperForExt(res, null), function(err) { console.log(err); });
 }
 
 var bugTimelineSQL = 'select date(a.createdAt) as created, count(a.id) bugs, count(b.id) as open \
@@ -52,5 +79,6 @@ module.exports = {
 	bugsByCategory: bugsByCategory,
 	bugsByTime: bugsByTime,
 	bugsCumulativeByTime: bugsCumulativeByTime,
-	bugsProgress: bugsProgress
+	bugsProgress: bugsProgress,
+	bugsByCategoryByDay: bugsByCategoryByDay
 }

@@ -12,7 +12,12 @@ Ext.define('BugTracker.view.ChartViewport', {
 	layout: {
 		type: 'fit'
 	},
-	items: [{ 
+	items: [{
+		xtype: 'bugradar',
+		width: 800,
+		height: 600
+	}]
+/*	items: [{ 
 		layout: 'hbox', 
 		items: [{
 			xtype: 'chart-bugline',
@@ -34,7 +39,7 @@ Ext.define('BugTracker.view.ChartViewport', {
 				width: 400
 			}]
 		}]
-	}]
+	}]*/
 	// here is where we'll include our chart work for testing    
 	/*items: [{ 
 		xtype: 'panel',		
